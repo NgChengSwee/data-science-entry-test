@@ -10,22 +10,15 @@ def find_and_replace(lst, find_val, replace_val):
         if lst[i] == find_val:
             lst[i] = replace_val
 
-    return lst
+    return lst  # Returning updated list
 
+# Invoke function find_and_replace to run test cases with expected results printed
 
-# Invoke function find_and_replace to run test cases
+print("\nTest case 1: [1, 2, 3, 4, 2, 2] replacing 2 with 5 (Expected: [1, 5, 3, 4, 5, 5])")
+print("Result:", find_and_replace([1, 2, 3, 4, 2, 2], 2, 5))
 
-# Test case 1
-result1 = find_and_replace([1, 2, 3, 4, 2, 2], 2, 5)
-print("\n")
-print(result1)  # Output: [1, 5, 3, 4, 5, 5]
+print("\nTest case 2: ['apple', 'banana', 'apple'] replacing 'apple' with 'orange' (Expected: ['orange', 'banana', 'orange'])")
+print("Result:", find_and_replace(["apple", "banana", "apple"], "apple", "orange"))
 
-# Test case 2
-result2 = find_and_replace(["apple", "banana", "apple"], "apple", "orange")
-print("\n")
-print(result2)  # Output: orange, banana, orange
-
-# Test case 3
-result3 = find_and_replace("not a list", 2, 99)
-print("\n")
-print(result3)  # Output: None
+print("\nTest case 3: 'not a list' replacing 2 with 99 (Expected: None)")
+print("Result:", find_and_replace("not a list", 2, 99))

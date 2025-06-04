@@ -1,28 +1,25 @@
-#def update_dictionary(dct, key, value):
-#    """
-#    Task 1
-#    - Create a function that updates a dictionary (dct) with a new key-value pair.
-#    - If the key already exists in dct, print the original value, then update its value.
-#    - Return the updated dictionary.
-#    """
-#    return
-
-# Task 2
-# Invoke the function "update_dictionary" using the following scenarios:
-# - {}, "name", "Alice"
-# - {"age": 25}, "age", 26
-
-
 # Function update_dict(dct, key, value) to update a dictionary (dct) with a new key-value pair.  If the key already exists in dct, print the original value, then update its value. Return the updated dictionary.
 
 def update_dictionary(dct, key, value):
+    """
+    Updates a dictionary with a new key-value pair.
+    If the key already exists, prints its original value before updating it.
+
+    Parameters:
+    dct (dict): The dictionary to modify.
+    key: The key to update or add.
+    value: The value to associate with the key.
+
+    Returns:
+    dict: Updated dictionary or None if the input is invalid.
+    """
+
     # Check if dct is a dictionary
     if not isinstance(dct, dict):
         return None
 
     # If the key exists, print the original value
     if key in dct:
-       print("\n")
        print(f"Original value for key '{key}': {dct[key]}")
 
     # Update or add the key-value pair
@@ -30,19 +27,13 @@ def update_dictionary(dct, key, value):
 
     return dct
 
+# Invoke function update_dictionary to run test cases with expected results printed
 
-# Invoke function update_dictionary to run test cases
+print("\nTest case 1: Adding 'name': 'Alice' to an empty dictionary (Expected: {'name': 'Alice'})")
+print("Result:", update_dictionary({}, "name", "Alice"))
 
-# Test case 1:
-updated = update_dictionary({}, "name", "Alice")
-print("\n")
-print(updated)  #
-                #
+print("\nTest case 2: Updating key 'age' from 25 to 26 (Expected: {'age': 26})")
+print("Result:", update_dictionary({"age": 25}, "age", 26))
 
-# Test case 2:
-updated = update_dictionary({"age": 25}, "age", 26)
-print(updated)  #
-
-# Test case 3: Invalid input
-print("\n")
-print(update_dictionary("not a dict", 'x', 1))  # Output: None
+print("\nTest case 3: Invalid input (Expected: None)")
+print("Result:", update_dictionary("not a dict", 'x', 1))

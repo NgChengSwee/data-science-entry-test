@@ -7,15 +7,25 @@ def string_reverse(s):
 
     # Reverse the string using slicing
     return s[::-1]
+    # Reverse the string using reversed() function combined with join() is an another clean way achieve the same goal
+    # return ''.join(reversed(s))
 
-#  Invoke function string_reverse to run test cases
+#  Invoke function string_reverse to run test cases with expected results printed
 
-print("\nString: Hello World")
-print(string_reverse("Hello World")) # Output: "dlroW olleH"
+print("\nTest case 1: 'Hello World' (Expected: 'dlroW olleH')")
+print("Result:", string_reverse("Hello World"))
 
-print("\nString: Python")
-print(string_reverse("Python"))          # Output: "nohtyP"
-print("\nNumber: 12345")
-print(string_reverse(12345))              # Output: None (not a string)
+print("\nTest case 2: 'Python' (Expected: 'nohtyP')")
+print("Result:", string_reverse("Python"))
 
+print("\nTest case 3: 12345 (Expected: None)")
+print("Result:", string_reverse(12345))
 
+print("\nTest case 4: '' (Expected: '')")
+print("Result:", string_reverse(""))
+
+print("\nTest case 5: '@#%&' (Expected: '&%#@')")
+print("Result:", string_reverse("@#%&"))
+
+print("\nTest case 6: '你好' (Expected: '好你')")
+print("Result:", string_reverse("你好"))
